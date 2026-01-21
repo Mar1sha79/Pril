@@ -1,0 +1,57 @@
+﻿@model Приложение.Models.Result
+
+@{
+    ViewData["Title"] = "Редактирование результата";
+}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-7">
+            <div class="card shadow-sm border-0" style="border-radius: 15px;">
+                <div class="card-body p-4">
+                    <h3 class="mb-4" style="color: #ffc107; font-weight: bold;">✏️ Редактировать результат</h3>
+                    <form asp-action="Edit">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <input type="hidden" asp-for="Id" />
+
+                        <div class="mb-3">
+                            <label class="form-label" style="color: #d35400; font-weight: bold;">Соревнование</label>
+                            <select asp-for="CompetitionId" class="form-select" asp-items="ViewBag.CompetitionId" style="background-color: #fdf7f2;"></select>
+                            <span asp-validation-for="CompetitionId" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label" style="color: #d35400; font-weight: bold;">Участник</label>
+                            <select asp-for="ParticipantId" class="form-select" asp-items="ViewBag.ParticipantId" style="background-color: #fdf7f2;"></select>
+                            <span asp-validation-for="ParticipantId" class="text-danger"></span>
+                        </div>
+
+                        <div class="row mb-4">
+                            <div class="col-md-6">
+                                <label class="form-label" style="color: #d35400; font-weight: bold;">Баллы</label>
+                                <input asp-for="Score" class="form-control" type="number" step="0.01" />
+                                <span asp-validation-for="Score" class="text-danger"></span>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label" style="color: #d35400; font-weight: bold;">Место</label>
+                                <input asp-for="Rank" class="form-control" />
+                                <span asp-validation-for="Rank" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="d-flex justify-content-between">
+                            <a asp-action="Index" class="btn btn-link text-muted">Вернуться</a>
+                            <button type="submit" class="btn btn-warning btn-lg text-white px-5" style="font-weight: bold;">💾 Обновить</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

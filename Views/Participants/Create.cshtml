@@ -1,0 +1,31 @@
+﻿@model Приложение.Models.Participant
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-7">
+            <div class="card shadow-sm border-0" style="border-radius: 15px;">
+                <div class="card-body p-4">
+                    <h3 class="mb-4" style="color: #ff8c00; font-weight: bold;">👤 Новый участник</h3>
+                    <form asp-action="Create">
+                        <div class="mb-3">
+                            <label class="form-label" style="color: #d35400; font-weight: bold;">Полное имя (ФИО)</label>
+                            <input asp-for="FullName" class="form-control form-control-lg" style="background-color: #fdf7f2;" placeholder="Введите ФИО" />
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" style="color: #d35400; font-weight: bold;">Команда / Организация</label>
+                            <input asp-for="TeamName" class="form-control" placeholder="Название клуба" />
+                        </div>
+                        <div class="mb-4">
+                            <label class="form-label" style="color: #d35400; font-weight: bold;">Дата рождения</label>
+                            <input asp-for="BirthDate" type="date" class="form-control" />
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <a asp-action="Index" class="btn btn-link text-muted">Отмена</a>
+                            <button type="submit" class="btn btn-lg text-white px-5" style="background-color: #ff8c00; font-weight: bold;">Создать профиль</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

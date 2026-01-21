@@ -1,0 +1,38 @@
+﻿@model Приложение.Models.Competition
+
+<div class="container mt-5">
+    <div class="card shadow-sm border-0 mx-auto" style="max-width: 700px; border-radius: 15px; overflow: hidden;">
+        <div class="p-4 text-white text-center" style="background-color: #17a2b8;">
+            <h2 class="mb-0">🏆 Детали соревнования</h2>
+        </div>
+        <div class="card-body p-5">
+            <div class="row mb-4 border-bottom pb-3">
+                <div class="col-sm-4 text-muted">Название:</div>
+                <div class="col-sm-8 fw-bold" style="font-size: 1.2rem; color: #000;">
+                    @Model.Name
+                </div>
+            </div>
+
+            <div class="row mb-4 border-bottom pb-3">
+                <div class="col-sm-4 text-muted">Место проведения:</div>
+                <div class="col-sm-8 fw-bold" style="font-size: 1.2rem; color: #000;">
+                    @Model.Location
+                </div>
+            </div>
+
+            <div class="row mb-4">
+                <div class="col-12 text-center">
+                    <div class="p-3 bg-light rounded shadow-sm">
+                        <small class="text-muted d-block mb-1">Дата проведения</small>
+                        <h3 class="mb-0 text-primary">@Model.Date.ToShortDateString()</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-5 d-flex gap-2">
+                <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-warning flex-grow-1 text-white fw-bold">Редактировать</a>
+                <a asp-action="Index" class="btn btn-outline-secondary flex-grow-1">К списку соревнований</a>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,81 @@
+﻿@model IEnumerable<Приложение.Models.Competition>
+
+@{
+    ViewData["Title"] = "Список соревнований";
+}
+
+<div class="container mt-5">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 style="color: #e67e22; font-weight: 800;">🏆 Соревнования</h2>
+        <a asp-action="Create" class="btn btn-lg text-white" style="background-color: #ff8c00; border-radius: 8px; font-weight: bold;">
+            + Добавить соревнование
+        </a>
+    </div>
+
+    <div class="card shadow-sm border-0" style="border-radius: 12px; overflow: hidden; border: 1px solid #eee;">
+        <div class="card-body p-0">
+            <table class="table table-hover mb-0">
+                <thead style="background-color: #fdf7f2; border-bottom: 2px solid #ff8c00;">
+                    <tr>
+                        <th class="p-3" style="color: #d35400; font-size: 0.95rem; border: none;">Название</th>
+                        <th class="p-3" style="color: #d35400; font-size: 0.95rem; border: none;">Дата проведения</th>
+                        <th class="p-3" style="color: #d35400; font-size: 0.95rem; border: none;">Место</th>
+                        <th class="p-3 text-end" style="color: #d35400;">Действия</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr style="vertical-align: middle; background-color: #fff;">
+                            <td class="p-3" style="color: #000; font-weight: 700;">@item.Name</td>
+
+                            <td class="p-3" style="color: #000;">@item.Date.ToShortDateString()</td>
+
+                            <td class="p-3" style="color: #000;">@item.Location</td>
+
+                            <td class="p-3 text-end">
+                                <div class="btn-group border shadow-sm" style="border-radius: 4px; overflow: hidden;">
+                                    <a asp-action="Edit" asp-route-id="@item.Id"
+                                       class="btn btn-white btn-sm px-3"
+                                       style="color: #ffc107; border-right: 1px solid #eee; font-weight: 600;">
+                                        Редактировать
+                                    </a>
+
+                                    <a asp-action="Details" asp-route-id="@item.Id"
+                                       class="btn btn-white btn-sm px-3"
+                                       style="color: #17a2b8; border-right: 1px solid #eee; font-weight: 600;">
+                                        Инфо
+                                    </a>
+
+                                    <a asp-action="Delete" asp-route-id="@item.Id"
+                                       class="btn btn-white btn-sm px-3"
+                                       style="color: #dc3545; font-weight: 600;"
+                                       onclick="return confirm('Удалить соревнование?')">
+                                        Удалить
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<style>
+    /* Убираем стандартные границы для чистоты интерфейса */
+    .table > :not(caption) > * > * {
+        border-bottom-width: 1px;
+        border-color: #eee;
+    }
+
+    .btn-white {
+        background-color: #fff;
+        border: none;
+    }
+
+        .btn-white:hover {
+            background-color: #f8f9fa;
+        }
+</style>

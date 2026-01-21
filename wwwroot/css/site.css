@@ -1,0 +1,107 @@
+/* Основные настройки шрифтов и фона */
+html {
+    font-size: 16px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 18px;
+    }
+}
+
+body {
+    margin-bottom: 60px;
+    background-color: #fffaf5; /* Легкий кремовый фон для глаз */
+    color: #333;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* --- ОРАНЖЕВАЯ ТЕМА НАВИГАЦИИ --- */
+.navbar {
+    background-color: #ff8c00 !important; /* Насыщенный оранжевый (DarkOrange) */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.navbar-brand, .nav-link {
+    color: white !important;
+    font-weight: 600;
+}
+
+    .nav-link:hover {
+        color: #ffe0b2 !important; /* Светло-оранжевый при наведении */
+    }
+
+/* --- КНОПКИ (Интуитивно-понятный интерфейс) --- */
+/* Главная кнопка - Оранжевая */
+.btn-primary {
+    background-color: #ff8c00 !important;
+    border-color: #e67e22 !important;
+    color: white !important;
+    transition: all 0.3s ease;
+}
+
+    .btn-primary:hover {
+        background-color: #e67e22 !important;
+        transform: translateY(-1px);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+/* Кнопка "Назад к списку" (обычно серая или ссылка) */
+.btn-secondary {
+    background-color: #6c757d;
+    border: none;
+}
+
+/* --- ТАБЛИЦЫ (Просмотр данных) --- */
+.table {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0,0,0,0.05);
+}
+
+    .table thead {
+        background-color: #fff3e0; /* Очень светлый оранжевый для заголовков */
+        color: #e65100;
+    }
+
+.table-hover tbody tr:hover {
+    background-color: #fff8f0; /* Подсветка строки при наведении */
+}
+
+/* --- ФОРМЫ (Проверка вводимых значений) --- */
+.form-control:focus {
+    border-color: #ff8c00;
+    box-shadow: 0 0 0 0.25rem rgba(255, 140, 0, 0.25);
+}
+
+/* Стили для валидации (ошибки ввода) */
+.field-validation-error {
+    color: #d32f2f;
+    font-size: 0.85rem;
+    font-weight: bold;
+}
+
+.input-validation-error {
+    border: 2px solid #d32f2f !important;
+}
+
+/* --- ПОДВАЛ (Footer) --- */
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    line-height: 60px;
+    background-color: #333;
+    color: #ddd;
+    border-top: 4px solid #ff8c00;
+}
+
+/* Заголовки страниц */
+h1, h2, h3 {
+    color: #e65100;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-weight: 700;
+}

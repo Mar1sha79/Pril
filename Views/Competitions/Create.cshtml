@@ -1,0 +1,31 @@
+﻿@model Приложение.Models.Competition
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-7">
+            <div class="card shadow-sm border-0" style="border-radius: 15px;">
+                <div class="card-body p-4">
+                    <h3 class="mb-4" style="color: #ff8c00; font-weight: bold;">🏆 Новое соревнование</h3>
+                    <form asp-action="Create">
+                        <div class="mb-3">
+                            <label class="form-label" style="color: #d35400; font-weight: bold;">Название турнира</label>
+                            <input asp-for="Name" class="form-control form-control-lg" style="background-color: #fdf7f2;" placeholder="Например: Чемпионат мира" />
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" style="color: #d35400; font-weight: bold;">Место проведения</label>
+                            <input asp-for="Location" class="form-control" placeholder="Город, стадион" />
+                        </div>
+                        <div class="mb-4">
+                            <label class="form-label" style="color: #d35400; font-weight: bold;">Дата проведения</label>
+                            <input asp-for="Date" type="date" class="form-control" />
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <a asp-action="Index" class="btn btn-link text-muted">Отмена</a>
+                            <button type="submit" class="btn btn-lg text-white px-5" style="background-color: #ff8c00; font-weight: bold;">Опубликовать</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
